@@ -6,16 +6,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class QuizActivity extends AppCompatActivity {
 
     Button mainMenuBtn;
-    Button redBtn, blueBtn, yellowBtn, greenBtn;
+    Button topLeftBtn, topRightBtn, bottomLeftBtn, bottomRightBtn;
+    TextView pointsLabel;
+    int points = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+        pointsLabel = (TextView) findViewById(R.id.points_label);
 
         mainMenuBtn = (Button) findViewById(R.id.main_menu_btn);
         mainMenuBtn.setOnClickListener(new View.OnClickListener() {
@@ -25,33 +30,44 @@ public class QuizActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        redBtn = (Button) findViewById(R.id.top_left);
-        redBtn.setOnClickListener(new View.OnClickListener() {
+        topLeftBtn = (Button) findViewById(R.id.top_left);
+        topLeftBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("This is the red button");
+                System.out.println("This is the top left button");
+                changePoints(points);
             }
         });
-        blueBtn = (Button) findViewById(R.id.top_right);
-        blueBtn.setOnClickListener(new View.OnClickListener() {
+        topRightBtn = (Button) findViewById(R.id.top_right);
+        topRightBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("This is the blue button");
+                System.out.println("This is the top right button");
+                changePoints(points);
             }
         });
-        yellowBtn = (Button) findViewById(R.id.bottom_left);
-        yellowBtn.setOnClickListener(new View.OnClickListener() {
+        bottomLeftBtn = (Button) findViewById(R.id.bottom_left);
+        bottomLeftBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("This is the yellow button");
+                System.out.println("This is the bottom left button");
             }
         });
-        greenBtn = (Button) findViewById(R.id.bottom_right);
-        greenBtn.setOnClickListener(new View.OnClickListener() {
+        bottomRightBtn = (Button) findViewById(R.id.bottom_right);
+        bottomRightBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("This is the green button");
+                System.out.println("This is the bottom right button");
             }
         });
+    }
+
+    private void changePoints(int newPoints) {
+        boolean correct = true;
+        if (correct) {
+            newPoints++;
+            points = newPoints;
+        }
+        pointsLabel.setText("Points: " + newPoints);
     }
 }

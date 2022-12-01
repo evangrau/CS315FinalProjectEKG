@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CS315FinalProjectEKG</string>
+    <string name="app_name">Learn Colors and Letters!</string>
     <string name="title">Welcome to the learning colors/letters and coloring book app! Click any one of the buttons to get started!</string>
     <string name="learn_colors">Learn Colors</string>
     <string name="learn_letters">Learn Letters</string>

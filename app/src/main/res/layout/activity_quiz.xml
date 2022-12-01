@@ -8,67 +8,80 @@
 
     <Button
         android:id="@+id/main_menu_btn"
-        android:layout_width="126dp"
-        android:layout_height="61dp"
+        android:layout_width="123dp"
+        android:layout_height="56dp"
         android:text="@string/main_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.943"
+        app:layout_constraintHorizontal_bias="0.932"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.022" />
 
     <Button
         android:id="@+id/top_left"
-        android:layout_width="201dp"
+        android:layout_width="160dp"
         android:layout_height="105dp"
-        android:layout_marginStart="4dp"
-        android:backgroundTint="@color/kahoot_red"
+        android:layout_marginStart="16dp"
         android:contentDescription="@string/red_button"
         app:layout_constraintBottom_toTopOf="@+id/bottom_left"
-        app:layout_constraintEnd_toStartOf="@+id/top_right"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         tools:ignore="RedundantDescriptionCheck" />
 
     <Button
         android:id="@+id/top_right"
-        android:layout_width="201dp"
+        android:layout_width="160dp"
         android:layout_height="105dp"
-        android:layout_marginEnd="4dp"
-        android:backgroundTint="@color/kahoot_blue"
+        android:layout_marginEnd="16dp"
         android:contentDescription="@string/blue_button"
         app:layout_constraintBottom_toTopOf="@+id/bottom_right"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         tools:ignore="RedundantDescriptionCheck" />
 
     <Button
         android:id="@+id/bottom_left"
-        android:layout_width="201dp"
+        android:layout_width="160dp"
         android:layout_height="105dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="4dp"
-        android:backgroundTint="@color/kahoot_yellow"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
         android:contentDescription="@string/title"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/bottom_right"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="RedundantDescriptionCheck" />
 
     <Button
         android:id="@+id/bottom_right"
-        android:layout_width="201dp"
+        android:layout_width="160dp"
         android:layout_height="105dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="4dp"
-        android:backgroundTint="@color/kahoot_green"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:contentDescription="@string/green_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="RedundantDescriptionCheck" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.325"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/points_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Points: 0"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
 </androidx.constraintlayout.widget.ConstraintLayout>

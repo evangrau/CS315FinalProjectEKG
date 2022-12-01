@@ -52,7 +52,8 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void changePoints(String buttonText) {
-        if (pointsLabel.getText().toString().equals(buttonText)) {
+        String answer = answerLabel.getText().toString();
+        if (answer.equals(buttonText)) {
             points++;
         } else {
             points--;

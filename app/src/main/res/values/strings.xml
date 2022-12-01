@@ -7,4 +7,9 @@
     <string name="ll_welcome">Welcome to the learning letters quiz! Tap the button below to begin!</string>
     <string name="lc_welcome">Welcome to the learning colors quiz! Tap the button below to begin!</string>
     <string name="start_quiz_label">Start Quiz</string>
+    <string name="main_menu">Back to Main Menu</string>
+    <string name="red_button">Red Button</string>
+    <string name="blue_button">Blue Button</string>
+    <string name="yellow_button">Yellow Button</string>
+    <string name="green_button">Green Button</string>
 </resources>

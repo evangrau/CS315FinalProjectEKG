@@ -35,7 +35,7 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 System.out.println("This is the top left button");
-                changePoints(points);
+                changePoints(true);
             }
         });
         topRightBtn = (Button) findViewById(R.id.top_right);
@@ -43,7 +43,7 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 System.out.println("This is the top right button");
-                changePoints(points);
+                changePoints(true);
             }
         });
         bottomLeftBtn = (Button) findViewById(R.id.bottom_left);
@@ -51,6 +51,7 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 System.out.println("This is the bottom left button");
+                changePoints(false);
             }
         });
         bottomRightBtn = (Button) findViewById(R.id.bottom_right);
@@ -58,16 +59,17 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 System.out.println("This is the bottom right button");
+                changePoints(false);
             }
         });
     }
 
-    private void changePoints(int newPoints) {
-        boolean correct = true;
+    private void changePoints(boolean correct) {
         if (correct) {
-            newPoints++;
-            points = newPoints;
+            points++;
+        } else {
+            points--;
         }
-        pointsLabel.setText("Points: " + newPoints);
+        pointsLabel.setText("Points: " + points);
     }
 }

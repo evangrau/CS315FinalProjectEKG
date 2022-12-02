@@ -9,7 +9,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Random;
 
 public class QuizActivity extends AppCompatActivity {
@@ -102,16 +104,14 @@ public class QuizActivity extends AppCompatActivity {
     private void selectLetter() {
         String[] letters = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
         String[] chosen = new String[4];
+        Map<String,String> chosenMap = new HashMap<>();
         Random random = new Random();
         for (int i = 0; i < 4; i++) {
             int rng = random.nextInt(26);
-            if (i != 0) {
-                for (int j = i-1; j > 0; j--) {
-                    while (chosen[j] == letters[rng]) {
-                        rng = random.nextInt(26);
-                    }
-                }
+            while (chosenMap.containsKey(letters[rng])) {
+                rng = random.nextInt(6);
             }
+            chosenMap.put(letters[rng],letters[rng]);
             chosen[i] = letters[rng];
         }
         int rng = random.nextInt(4);
@@ -126,16 +126,14 @@ public class QuizActivity extends AppCompatActivity {
     private void selectColor() {
         String[] colors = {"red", "orange", "yellow", "green", "blue", "purple"};
         String[] chosen = new String[4];
+        Map<String,String> chosenMap = new HashMap<>();
         Random random = new Random();
         for (int i = 0; i < 4; i++) {
             int rng = random.nextInt(6);
-            if (i != 0) {
-                for (int j = i-1; j > 0; j--) {
-                    while (chosen[j] == colors[rng]) {
-                        rng = random.nextInt(6);
-                    }
-                }
+            while (chosenMap.containsKey(colors[rng])) {
+                rng = random.nextInt(6);
             }
+            chosenMap.put(colors[rng],colors[rng]);
             chosen[i] = colors[rng];
         }
         int rng = random.nextInt(4);

@@ -8,8 +8,9 @@
     <string name="lc_welcome">Welcome to the learning colors quiz! Tap the button below to begin!</string>
     <string name="start_quiz_label">Start Quiz</string>
     <string name="main_menu">Back to Main Menu</string>
-    <string name="red_button">Red Button</string>
-    <string name="blue_button">Blue Button</string>
-    <string name="yellow_button">Yellow Button</string>
-    <string name="green_button">Green Button</string>
+    <string name="red_button">Top Left Button</string>
+    <string name="blue_button">Top Right Button</string>
+    <string name="yellow_button">Bottom Left Button</string>
+    <string name="green_button">Bottom Right Button</string>
+    <string name="show_answer">Show Answer</string>
 </resources>

@@ -23,7 +23,7 @@
         android:layout_width="160dp"
         android:layout_height="105dp"
         android:layout_marginStart="16dp"
-        android:contentDescription="@string/red_button"
+        android:contentDescription="@string/topleft_button"
         app:layout_constraintBottom_toTopOf="@+id/bottom_left"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="RedundantDescriptionCheck" />
@@ -33,7 +33,7 @@
         android:layout_width="160dp"
         android:layout_height="105dp"
         android:layout_marginEnd="16dp"
-        android:contentDescription="@string/blue_button"
+        android:contentDescription="@string/topright_button"
         app:layout_constraintBottom_toTopOf="@+id/bottom_right"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="RedundantDescriptionCheck" />
@@ -44,7 +44,7 @@
         android:layout_height="105dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
-        android:contentDescription="@string/title"
+        android:contentDescription="@string/bottomleft_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="RedundantDescriptionCheck" />
@@ -55,7 +55,7 @@
         android:layout_height="105dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:contentDescription="@string/green_button"
+        android:contentDescription="@string/bottomright_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="RedundantDescriptionCheck" />

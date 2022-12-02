@@ -17,13 +17,10 @@ public class LearnLettersStart extends AppCompatActivity {
         setContentView(R.layout.activity_learn_letters_start);
 
         startQuiz = (Button) findViewById(R.id.start_letters);
-        startQuiz.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LearnLettersStart.this, QuizActivity.class);
-                intent.putExtra("quizType", "letters");
-                startActivity(intent);
-            }
+        startQuiz.setOnClickListener(view -> {
+            Intent intent = new Intent(LearnLettersStart.this, QuizActivity.class);
+            intent.putExtra("quizType", "letters");
+            startActivity(intent);
         });
     }
 }

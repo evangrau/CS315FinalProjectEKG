@@ -17,13 +17,10 @@ public class LearnColorsStart extends AppCompatActivity {
         setContentView(R.layout.activity_learn_colors_start);
 
         startQuiz = (Button) findViewById(R.id.start_colors);
-        startQuiz.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LearnColorsStart.this, QuizActivity.class);
-                intent.putExtra("quizType", "colors");
-                startActivity(intent);
-            }
+        startQuiz.setOnClickListener(view -> {
+            Intent intent = new Intent(LearnColorsStart.this, QuizActivity.class);
+            intent.putExtra("quizType", "colors");
+            startActivity(intent);
         });
     }
 }

@@ -104,10 +104,8 @@ public class QuizActivity extends AppCompatActivity {
                 while (chosen[i - 1] == letters[rng]) {
                     rng = random.nextInt(26);
                 }
-                chosen[i] = letters[rng];
-            } else {
-                chosen[i] = letters[rng];
             }
+            chosen[i] = letters[rng];
         }
         int rng = random.nextInt(4);
         String answer = chosen[rng];
@@ -128,10 +126,8 @@ public class QuizActivity extends AppCompatActivity {
                 while (chosen[i - 1] == colors[rng]) {
                     rng = random.nextInt(6);
                 }
-                chosen[i] = colors[rng];
-            } else {
-                chosen[i] = colors[rng];
             }
+            chosen[i] = colors[rng];
         }
         int rng = random.nextInt(4);
         String answer = chosen[rng];

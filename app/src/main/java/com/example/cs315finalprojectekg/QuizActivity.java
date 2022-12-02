@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Locale;
 import java.util.Random;
 
 public class QuizActivity extends AppCompatActivity {
@@ -41,6 +42,7 @@ public class QuizActivity extends AppCompatActivity {
         showAnswerBtn = (Button) findViewById(R.id.show_answer);
         showAnswerBtn.setOnClickListener(view -> {
             answerLabel.setVisibility(View.VISIBLE);
+            points--;
         });
 
         mainMenuBtn = (Button) findViewById(R.id.main_menu_btn);
@@ -82,6 +84,9 @@ public class QuizActivity extends AppCompatActivity {
 
     private void changePoints(String buttonText) {
         String answer = answerLabel.getText().toString();
+        if (quizType.equals("letters")) {
+            answer = String.valueOf(answer.charAt(1));
+        }
         if (answer.equals(buttonText)) {
             points++;
         }
@@ -101,15 +106,17 @@ public class QuizActivity extends AppCompatActivity {
         for (int i = 0; i < 4; i++) {
             int rng = random.nextInt(26);
             if (i != 0) {
-                while (chosen[i - 1] == letters[rng]) {
-                    rng = random.nextInt(26);
+                for (int j = i-1; j > 0; j--) {
+                    while (chosen[j] == letters[rng]) {
+                        rng = random.nextInt(26);
+                    }
                 }
             }
             chosen[i] = letters[rng];
         }
         int rng = random.nextInt(4);
         String answer = chosen[rng];
-        answerLabel.setText(answer);
+        answerLabel.setText(answer.toUpperCase() + answer);
         topLeftBtn.setText(chosen[0]);
         topRightBtn.setText(chosen[1]);
         bottomLeftBtn.setText(chosen[2]);
@@ -123,8 +130,10 @@ public class QuizActivity extends AppCompatActivity {
         for (int i = 0; i < 4; i++) {
             int rng = random.nextInt(6);
             if (i != 0) {
-                while (chosen[i - 1] == colors[rng]) {
-                    rng = random.nextInt(6);
+                for (int j = i-1; j > 0; j--) {
+                    while (chosen[j] == colors[rng]) {
+                        rng = random.nextInt(6);
+                    }
                 }
             }
             chosen[i] = colors[rng];

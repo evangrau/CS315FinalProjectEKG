@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -18,6 +19,7 @@ public class QuizActivity extends AppCompatActivity {
     Button showAnswerBtn;
     Button topLeftBtn, topRightBtn, bottomLeftBtn, bottomRightBtn;
     TextView pointsLabel, answerLabel;
+    ImageView colorSquare;
     int points = 0;
     String quizType;
 
@@ -33,6 +35,8 @@ public class QuizActivity extends AppCompatActivity {
         pointsLabel = (TextView) findViewById(R.id.points_label);
         answerLabel = (TextView) findViewById(R.id.answer_label);
         answerLabel.setVisibility(View.INVISIBLE);
+
+        colorSquare = (ImageView) findViewById(R.id.color_square);
 
         showAnswerBtn = (Button) findViewById(R.id.show_answer);
         showAnswerBtn.setOnClickListener(view -> {
@@ -96,7 +100,14 @@ public class QuizActivity extends AppCompatActivity {
         Random random = new Random();
         for (int i = 0; i < 4; i++) {
             int rng = random.nextInt(26);
-            chosen[i] = letters[rng];
+            if (i != 0) {
+                while (chosen[i - 1] == letters[rng]) {
+                    rng = random.nextInt(26);
+                }
+                chosen[i] = letters[rng];
+            } else {
+                chosen[i] = letters[rng];
+            }
         }
         int rng = random.nextInt(4);
         String answer = chosen[rng];
@@ -113,10 +124,39 @@ public class QuizActivity extends AppCompatActivity {
         Random random = new Random();
         for (int i = 0; i < 4; i++) {
             int rng = random.nextInt(6);
-            chosen[i] = colors[rng];
+            if (i != 0) {
+                while (chosen[i - 1] == colors[rng]) {
+                    rng = random.nextInt(6);
+                }
+                chosen[i] = colors[rng];
+            } else {
+                chosen[i] = colors[rng];
+            }
         }
         int rng = random.nextInt(4);
         String answer = chosen[rng];
+        switch (answer) {
+            case "red":
+                colorSquare.setBackgroundResource(R.color.custom_red);
+                break;
+            case "orange":
+                colorSquare.setBackgroundResource(R.color.custom_orange);
+                break;
+            case "yellow":
+                colorSquare.setBackgroundResource(R.color.custom_yellow);
+                break;
+            case "green":
+                colorSquare.setBackgroundResource(R.color.custom_green);
+                break;
+            case "blue":
+                colorSquare.setBackgroundResource(R.color.custom_blue);
+                break;
+            case "purple":
+                colorSquare.setBackgroundResource(R.color.custom_purple);
+                break;
+            default:
+                break;
+        }
         answerLabel.setText(answer);
         topLeftBtn.setText(chosen[0]);
         topRightBtn.setText(chosen[1]);

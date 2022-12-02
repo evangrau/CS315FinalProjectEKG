@@ -15,6 +15,7 @@ public class QuizActivity extends AppCompatActivity {
     Button topLeftBtn, topRightBtn, bottomLeftBtn, bottomRightBtn;
     TextView pointsLabel, answerLabel;
     int points = 0;
+    String quizType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,12 @@ public class QuizActivity extends AppCompatActivity {
             System.out.println("This is the bottom right button");
             changePoints(bottomRightBtn.getText().toString());
         });
+
+        if (quizType.equals("colors")) {
+            selectColor();
+        } else {
+            selectLetter();
+        }
     }
 
     private void changePoints(String buttonText) {
@@ -59,19 +66,24 @@ public class QuizActivity extends AppCompatActivity {
             points--;
         }
         pointsLabel.setText("Points: " + points);
-        selectLetter();
+        if (quizType.equals("colors")) {
+            selectColor();
+        } else {
+            selectLetter();
+        }
     }
 
     private void selectLetter() {
-        char[] letters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-        char[] chosen = new char[4];
+        String[] letters = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+        String[] chosen = new String[4];
         Random random = new Random();
+        int numLetters = 26;
         for (int i = 0; i < 4; i++) {
-            int rng = random.nextInt(26);
+            int rng = random.nextInt(numLetters);
             chosen[i] = letters[rng];
         }
         int rng = random.nextInt(4);
-        String answer = String.valueOf(chosen[rng]);
+        String answer = chosen[rng];
         answerLabel.setText(answer);
         topLeftBtn.setText(chosen[0]);
         topRightBtn.setText(chosen[1]);
@@ -79,20 +91,20 @@ public class QuizActivity extends AppCompatActivity {
         bottomRightBtn.setText(chosen[3]);
     }
 
-//    private void selectColor() {
-//        String[] colors = {"red", "orange", "yellow", "green", "blue", "purple"};
-//        String[] chosen = new String[4];
-//        Random random = new Random();
-//        for (int i = 0; i < 4; i++) {
-//            int rng = random.nextInt(26);
-//            chosen[i] = colors[rng];
-//        }
-//        int rng = random.nextInt(4);
-//        String answer = chosen[rng];
-//        answerLabel.setText(answer);
-//        topLeftBtn.setText(chosen[0]);
-//        topRightBtn.setText(chosen[1]);
-//        bottomLeftBtn.setText(chosen[2]);
-//        bottomRightBtn.setText(chosen[3]);
-//    }
+    private void selectColor() {
+        String[] colors = {"red", "orange", "yellow", "green", "blue", "purple"};
+        String[] chosen = new String[4];
+        Random random = new Random();
+        for (int i = 0; i < 4; i++) {
+            int rng = random.nextInt(26);
+            chosen[i] = colors[rng];
+        }
+        int rng = random.nextInt(4);
+        String answer = chosen[rng];
+        answerLabel.setText(answer);
+        topLeftBtn.setText(chosen[0]);
+        topRightBtn.setText(chosen[1]);
+        bottomLeftBtn.setText(chosen[2]);
+        bottomRightBtn.setText(chosen[3]);
+    }
 }

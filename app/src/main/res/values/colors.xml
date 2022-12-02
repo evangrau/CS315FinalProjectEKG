@@ -7,8 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="kahoot_red">#EB21</color>
-    <color name="kahoot_blue">#1368CE</color>
-    <color name="kahoot_green">#26890C</color>
-    <color name="kahoot_yellow">#FFC00A</color>
+    <color name="custom_red">#EB21</color>
+    <color name="custom_orange">#F5A23E</color>
+    <color name="custom_yellow">#FFC00A</color>
+    <color name="custom_green">#26890C</color>
+    <color name="custom_blue">#1368CE</color>
+    <color name="custom_purple">#864CBF</color>
 </resources>

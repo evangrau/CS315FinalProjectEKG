@@ -17,6 +17,8 @@ public class QuizActivity extends AppCompatActivity {
     Button topLeftBtn, topRightBtn, bottomLeftBtn, bottomRightBtn;
     TextView pointsLabel, answerLabel;
     int points = 0;
+    int numLetters = 26;
+    int numColors = 6;
     String quizType;
 
     @Override
@@ -58,9 +60,9 @@ public class QuizActivity extends AppCompatActivity {
         });
 
         if (quizType.equals("colors")) {
-            selectColor();
+            selectColor(numColors);
         } else {
-            selectLetter();
+            selectLetter(numLetters);
         }
     }
 
@@ -68,22 +70,24 @@ public class QuizActivity extends AppCompatActivity {
         String answer = answerLabel.getText().toString();
         if (answer.equals(buttonText)) {
             points++;
-        } else {
-            points--;
+            if (quizType.equals("colors")) {
+                numColors--;
+            } else {
+                numLetters--;
+            }
         }
         pointsLabel.setText("Points: " + points);
         if (quizType.equals("colors")) {
-            selectColor();
+            selectColor(numColors);
         } else {
-            selectLetter();
+            selectLetter(numLetters);
         }
     }
 
-    private void selectLetter() {
+    private void selectLetter(int numLetters) {
         String[] letters = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
         String[] chosen = new String[4];
         Random random = new Random();
-        int numLetters = 26;
         for (int i = 0; i < 4; i++) {
             int rng = random.nextInt(numLetters);
             chosen[i] = letters[rng];
@@ -97,11 +101,10 @@ public class QuizActivity extends AppCompatActivity {
         bottomRightBtn.setText(chosen[3]);
     }
 
-    private void selectColor() {
+    private void selectColor(int numColors) {
         String[] colors = {"red", "orange", "yellow", "green", "blue", "purple"};
         String[] chosen = new String[4];
         Random random = new Random();
-        int numColors = 6;
         for (int i = 0; i < 4; i++) {
             int rng = random.nextInt(numColors);
             chosen[i] = colors[rng];
@@ -113,5 +116,18 @@ public class QuizActivity extends AppCompatActivity {
         topRightBtn.setText(chosen[1]);
         bottomLeftBtn.setText(chosen[2]);
         bottomRightBtn.setText(chosen[3]);
+    }
+
+    private String[] removeItem(String[] ogArray, int length, int index) {
+
+        String[] copyArray = new String[length];
+
+        // copy elements from original array from beginning till index into copyArray
+        System.arraycopy(ogArray, 0, copyArray, 0, index);
+
+        // copy elements from original array from index+1 till end into copyArray
+        System.arraycopy(ogArray, index + 1, copyArray, index, ogArray.length - index - 1);
+
+        return copyArray;
     }
 }

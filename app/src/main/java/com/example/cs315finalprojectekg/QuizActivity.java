@@ -11,6 +11,8 @@ import java.util.Random;
 
 public class QuizActivity extends AppCompatActivity {
 
+    Intent intent;
+    Bundle extras;
     Button mainMenuBtn;
     Button topLeftBtn, topRightBtn, bottomLeftBtn, bottomRightBtn;
     TextView pointsLabel, answerLabel;
@@ -21,6 +23,10 @@ public class QuizActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+        intent = getIntent();
+        extras = intent.getExtras();
+        quizType = extras.getString("quizType");
 
         pointsLabel = (TextView) findViewById(R.id.points_label);
         answerLabel = (TextView) findViewById(R.id.answer_label);
@@ -95,8 +101,9 @@ public class QuizActivity extends AppCompatActivity {
         String[] colors = {"red", "orange", "yellow", "green", "blue", "purple"};
         String[] chosen = new String[4];
         Random random = new Random();
+        int numColors = 6;
         for (int i = 0; i < 4; i++) {
-            int rng = random.nextInt(26);
+            int rng = random.nextInt(numColors);
             chosen[i] = colors[rng];
         }
         int rng = random.nextInt(4);

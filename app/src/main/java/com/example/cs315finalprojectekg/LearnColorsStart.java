@@ -21,6 +21,7 @@ public class LearnColorsStart extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LearnColorsStart.this, QuizActivity.class);
+                intent.putExtra("quizType", "colors");
                 startActivity(intent);
             }
         });

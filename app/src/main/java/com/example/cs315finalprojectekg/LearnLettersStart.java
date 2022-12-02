@@ -21,6 +21,7 @@ public class LearnLettersStart extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LearnLettersStart.this, QuizActivity.class);
+                intent.putExtra("quizType", "letters");
                 startActivity(intent);
             }
         });

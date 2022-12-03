@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -28,6 +29,7 @@ public class QuizActivity extends AppCompatActivity {
     String quizType;
     MediaPlayer aSound, bSound, cSound, dSound, eSound, fSound, gSound, hSound, iSound, jSound, kSound, lSound, mSound,
             nSound, oSound, pSound, qSound, rSound, sSound, tSound, uSound, vSound, wSound, xSound, ySound, zSound;
+    MediaPlayer cheer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +72,8 @@ public class QuizActivity extends AppCompatActivity {
         xSound = MediaPlayer.create(this, R.raw.x_audio);
         ySound = MediaPlayer.create(this, R.raw.y_audio);
         zSound = MediaPlayer.create(this, R.raw.z_audio);
+
+        cheer = MediaPlayer.create(this, R.raw.cheering);
 
         showAnswerBtn = (Button) findViewById(R.id.show_answer);
         showAnswerBtn.setOnClickListener(view -> {
@@ -136,6 +140,9 @@ public class QuizActivity extends AppCompatActivity {
         balance = 0;
         numClicks = 0;
         pointsLabel.setText("Points: " + points);
+        if (points == 20) {
+            cheer.start();
+        }
         answerLabel.setVisibility(View.INVISIBLE);
         if (quizType.equals("colors")) {
             selectColor();

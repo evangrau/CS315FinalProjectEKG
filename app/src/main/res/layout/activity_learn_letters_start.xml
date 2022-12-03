@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/letters_welcome" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/alphabet_image"
         android:layout_width="314dp"
         android:layout_height="242dp"
         android:contentDescription="@string/alphabet"

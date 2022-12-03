@@ -3,6 +3,7 @@ package com.example.cs315finalprojectekg;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,8 @@ public class QuizActivity extends AppCompatActivity {
     ImageView colorSquare;
     int points = 0;
     String quizType;
+    MediaPlayer aSound, bSound, cSound, dSound, eSound, fSound, gSound, hSound, iSound, jSound, kSound, lSound, mSound,
+            nSound, oSound, pSound, qSound, rSound, sSound, tSound, uSound, vSound, wSound, xSound, ySound, zSound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,33 @@ public class QuizActivity extends AppCompatActivity {
         answerLabel.setVisibility(View.INVISIBLE);
 
         colorSquare = (ImageView) findViewById(R.id.color_square);
+
+        aSound = MediaPlayer.create(this, R.raw.a_audio);
+        bSound = MediaPlayer.create(this, R.raw.b_audio);
+        cSound = MediaPlayer.create(this, R.raw.c_audio);
+        dSound = MediaPlayer.create(this, R.raw.d_audio);
+        eSound = MediaPlayer.create(this, R.raw.e_audio);
+        fSound = MediaPlayer.create(this, R.raw.f_audio);
+        gSound = MediaPlayer.create(this, R.raw.g_audio);
+        hSound = MediaPlayer.create(this, R.raw.h_audio);
+        iSound = MediaPlayer.create(this, R.raw.i_audio);
+        jSound = MediaPlayer.create(this, R.raw.j_audio);
+        kSound = MediaPlayer.create(this, R.raw.k_audio);
+        lSound = MediaPlayer.create(this, R.raw.l_audio);
+        mSound = MediaPlayer.create(this, R.raw.m_audio);
+        nSound = MediaPlayer.create(this, R.raw.n_audio);
+        oSound = MediaPlayer.create(this, R.raw.o_audio);
+        pSound = MediaPlayer.create(this, R.raw.p_audio);
+        qSound = MediaPlayer.create(this, R.raw.q_audio);
+        rSound = MediaPlayer.create(this, R.raw.r_audio);
+        sSound = MediaPlayer.create(this, R.raw.s_audio);
+        tSound = MediaPlayer.create(this, R.raw.t_audio);
+        uSound = MediaPlayer.create(this, R.raw.u_audio);
+        vSound = MediaPlayer.create(this, R.raw.v_audio);
+        wSound = MediaPlayer.create(this, R.raw.w_audio);
+        xSound = MediaPlayer.create(this, R.raw.x_audio);
+        ySound = MediaPlayer.create(this, R.raw.y_audio);
+        zSound = MediaPlayer.create(this, R.raw.z_audio);
 
         showAnswerBtn = (Button) findViewById(R.id.show_answer);
         showAnswerBtn.setOnClickListener(view -> {
@@ -121,6 +151,88 @@ public class QuizActivity extends AppCompatActivity {
         topRightBtn.setText(chosen[1]);
         bottomLeftBtn.setText(chosen[2]);
         bottomRightBtn.setText(chosen[3]);
+        switch (answer) {
+            case "a":
+                aSound.start();
+                break;
+            case "b":
+                bSound.start();
+                break;
+            case "c":
+                cSound.start();
+                break;
+            case "d":
+                dSound.start();
+                break;
+            case "e":
+                eSound.start();
+                break;
+            case "f":
+                fSound.start();
+                break;
+            case "g":
+                gSound.start();
+                break;
+            case "h":
+                hSound.start();
+                break;
+            case "i":
+                iSound.start();
+                break;
+            case "j":
+                jSound.start();
+                break;
+            case "k":
+                kSound.start();
+                break;
+            case "l":
+                lSound.start();
+                break;
+            case "m":
+                mSound.start();
+                break;
+            case "n":
+                nSound.start();
+                break;
+            case "o":
+                oSound.start();
+                break;
+            case "p":
+                pSound.start();
+                break;
+            case "q":
+                qSound.start();
+                break;
+            case "r":
+                rSound.start();
+                break;
+            case "s":
+                sSound.start();
+                break;
+            case "t":
+                tSound.start();
+                break;
+            case "u":
+                uSound.start();
+                break;
+            case "v":
+                vSound.start();
+                break;
+            case "w":
+                wSound.start();
+                break;
+            case "x":
+                xSound.start();
+                break;
+            case "y":
+                ySound.start();
+                break;
+            case "z":
+                zSound.start();
+                break;
+            default:
+                break;
+        }
     }
 
     private void selectColor() {

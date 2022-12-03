@@ -24,7 +24,7 @@ public class QuizActivity extends AppCompatActivity {
     Button topLeftBtn, topRightBtn, bottomLeftBtn, bottomRightBtn;
     TextView pointsLabel, answerLabel;
     ImageView colorSquare;
-    int points = 0;
+    int points = 0, balance = 0, numClicks = 0;
     String quizType;
     MediaPlayer aSound, bSound, cSound, dSound, eSound, fSound, gSound, hSound, iSound, jSound, kSound, lSound, mSound,
             nSound, oSound, pSound, qSound, rSound, sSound, tSound, uSound, vSound, wSound, xSound, ySound, zSound;
@@ -73,8 +73,18 @@ public class QuizActivity extends AppCompatActivity {
 
         showAnswerBtn = (Button) findViewById(R.id.show_answer);
         showAnswerBtn.setOnClickListener(view -> {
-            answerLabel.setVisibility(View.VISIBLE);
-            points--;
+            if (answerLabel.getVisibility() == View.INVISIBLE) {
+                answerLabel.setVisibility(View.VISIBLE);
+                showAnswerBtn.setText(R.string.hide_answer);
+                points--;
+                if (numClicks > 1) {
+                    balance++;
+                }
+            } else {
+                answerLabel.setVisibility(View.INVISIBLE);
+                showAnswerBtn.setText(R.string.show_answer);
+            }
+            numClicks++;
         });
 
         mainMenuBtn = (Button) findViewById(R.id.main_menu_btn);
@@ -121,7 +131,10 @@ public class QuizActivity extends AppCompatActivity {
         }
         if (answer.equals(buttonText)) {
             points++;
+            points += balance;
         }
+        balance = 0;
+        numClicks = 0;
         pointsLabel.setText("Points: " + points);
         answerLabel.setVisibility(View.INVISIBLE);
         if (quizType.equals("colors")) {

@@ -13,4 +13,5 @@
     <string name="bottomleft_button">Bottom Left Button</string>
     <string name="bottomright_button">Bottom Right Button</string>
     <string name="show_answer">Show Answer</string>
+    <string name="hide_answer">Hide Answer</string>
 </resources>

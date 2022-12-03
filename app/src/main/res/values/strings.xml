@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Learn Colors and Letters!</string>
     <string name="title">Welcome to the learning colors/letters and coloring book app! Click any one of the buttons to get started!</string>
-    <string name="learn_colors">Learn Colors</string>
+    <string name="learn_colors">Learn\nColors</string>
     <string name="learn_letters">Learn Letters</string>
     <string name="coloring_book">Coloring Book</string>
     <string name="ll_welcome">Welcome to the learning letters quiz! Tap the button below to begin!</string>

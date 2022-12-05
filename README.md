@@ -6,3 +6,4 @@ Its current features include:
 - a letters quiz/game
 - a colors quiz/game
 - potentially a coloring book too
+  - yeah about that coloring book? i don't think so

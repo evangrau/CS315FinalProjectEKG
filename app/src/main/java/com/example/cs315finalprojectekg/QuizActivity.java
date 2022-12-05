@@ -171,6 +171,54 @@ public class QuizActivity extends AppCompatActivity {
         topRightBtn.setText(chosen[1]);
         bottomLeftBtn.setText(chosen[2]);
         bottomRightBtn.setText(chosen[3]);
+        playSound(answer);
+    }
+
+    private void selectColor() {
+        String[] colors = {"red", "orange", "yellow", "green", "blue", "purple"};
+        String[] chosen = new String[4];
+        Map<String,String> chosenMap = new HashMap<>();
+        Random random = new Random();
+        for (int i = 0; i < 4; i++) {
+            int rng = random.nextInt(6);
+            while (chosenMap.containsKey(colors[rng])) {
+                rng = random.nextInt(6);
+            }
+            chosenMap.put(colors[rng],colors[rng]);
+            chosen[i] = colors[rng];
+        }
+        int rng = random.nextInt(4);
+        String answer = chosen[rng];
+        switch (answer) {
+            case "red":
+                colorSquare.setBackgroundResource(R.color.custom_red);
+                break;
+            case "orange":
+                colorSquare.setBackgroundResource(R.color.custom_orange);
+                break;
+            case "yellow":
+                colorSquare.setBackgroundResource(R.color.custom_yellow);
+                break;
+            case "green":
+                colorSquare.setBackgroundResource(R.color.custom_green);
+                break;
+            case "blue":
+                colorSquare.setBackgroundResource(R.color.custom_blue);
+                break;
+            case "purple":
+                colorSquare.setBackgroundResource(R.color.custom_purple);
+                break;
+            default:
+                break;
+        }
+        answerLabel.setText(answer);
+        topLeftBtn.setText(chosen[0]);
+        topRightBtn.setText(chosen[1]);
+        bottomLeftBtn.setText(chosen[2]);
+        bottomRightBtn.setText(chosen[3]);
+    }
+
+    private void playSound(String answer) {
         switch (answer) {
             case "a":
                 aSound.start();
@@ -253,49 +301,5 @@ public class QuizActivity extends AppCompatActivity {
             default:
                 break;
         }
-    }
-
-    private void selectColor() {
-        String[] colors = {"red", "orange", "yellow", "green", "blue", "purple"};
-        String[] chosen = new String[4];
-        Map<String,String> chosenMap = new HashMap<>();
-        Random random = new Random();
-        for (int i = 0; i < 4; i++) {
-            int rng = random.nextInt(6);
-            while (chosenMap.containsKey(colors[rng])) {
-                rng = random.nextInt(6);
-            }
-            chosenMap.put(colors[rng],colors[rng]);
-            chosen[i] = colors[rng];
-        }
-        int rng = random.nextInt(4);
-        String answer = chosen[rng];
-        switch (answer) {
-            case "red":
-                colorSquare.setBackgroundResource(R.color.custom_red);
-                break;
-            case "orange":
-                colorSquare.setBackgroundResource(R.color.custom_orange);
-                break;
-            case "yellow":
-                colorSquare.setBackgroundResource(R.color.custom_yellow);
-                break;
-            case "green":
-                colorSquare.setBackgroundResource(R.color.custom_green);
-                break;
-            case "blue":
-                colorSquare.setBackgroundResource(R.color.custom_blue);
-                break;
-            case "purple":
-                colorSquare.setBackgroundResource(R.color.custom_purple);
-                break;
-            default:
-                break;
-        }
-        answerLabel.setText(answer);
-        topLeftBtn.setText(chosen[0]);
-        topRightBtn.setText(chosen[1]);
-        bottomLeftBtn.setText(chosen[2]);
-        bottomRightBtn.setText(chosen[3]);
     }
 }

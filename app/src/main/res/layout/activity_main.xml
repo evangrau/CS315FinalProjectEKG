@@ -16,15 +16,16 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.64" />
 
     <Button
         android:id="@+id/learn_colors_btn"
         android:layout_width="150dp"
         android:layout_height="75dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="44dp"
         android:text="@string/learn_colors"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.076"
@@ -35,11 +36,22 @@
         android:id="@+id/learn_letters_btn"
         android:layout_width="150dp"
         android:layout_height="75dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="44dp"
         android:text="@string/learn_letters"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.923"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <ImageView
+        android:id="@+id/main_icon"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/alpha_main" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

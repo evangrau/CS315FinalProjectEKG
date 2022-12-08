@@ -1,18 +1,18 @@
-package com.example.cs315finalprojectekg;
+package com.ekgapps.cs315finalprojectekg;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.cs315finalprojectekg.R;
+
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
 
